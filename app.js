@@ -10,10 +10,15 @@ const app = express();
 
 // Database connection
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'C237_usersdb'
+   // host: 'localhost',
+    //user: 'root',
+    //password: '',
+    //database: 'C237_usersdb'
+    host: '8egfrs.h.filess.io', 
+    port: 3307, 
+    user: 'c237database_thrownadd', 
+    password: '905c42e4ee71e1c5f5daaf46c52f56dfad6c2a59', 
+    database: 'c237database_thrownadd'
 });
 
 db.connect((err) => {
@@ -159,6 +164,9 @@ app.get('/logout', (req, res) => {
 });
 
 // Starting the server
-app.listen(3000, () => {
-    console.log('Server started on port 3000');
-});
+//app.listen(3000, () => {
+    //console.log('Server started on port 3000');
+//});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on URL address: http://localhost:${PORT}/`));
